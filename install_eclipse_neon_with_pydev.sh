@@ -82,7 +82,7 @@ unzip "$PYDEV_FILE_NAME"
 cd $USER_HOME
 mkdir eclipse
 cd eclipse
-cp -r /tmp/eclipse/eclipse/* .
+cp -r /tmp/eclipse/* .
 cd dropins
 mkdir pydev
 cd pydev
