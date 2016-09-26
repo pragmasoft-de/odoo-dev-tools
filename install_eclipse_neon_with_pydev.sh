@@ -30,6 +30,12 @@ esac
 PYDEV_DL_URL="http://downloads.sourceforge.net/project/pydev/pydev/PyDev%205.2.0/PyDev%205.2.0.zip"
 PYDEV_FILE_NAME="PyDev 5.2.0.zip"
 
+# script must be run as root
+if [ $USER != "root" ]; then
+	echo "Script must be run as root"
+	exit
+fi
+
 # script must be called with the name of the user who will run Eclipse as the first parameter
 if [ -z "$1" ]; then
 	echo "Usage: $0 username"
