@@ -7,4 +7,4 @@ Icon=/home/{{username}}/eclipse/icon.xpm
 Comment=Integrated Development Environment
 NoDisplay=false
 Categories=Development;IDE;
-Name[de_DE]=eclipse.desktop.template
+Name[de_DE]=eclipse.desktop
