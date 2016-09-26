@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Eclipse Neon
 Type=Application
-Exec=/home/{{username}}/eclipse
+Exec=/home/{{username}}/eclipse/eclipse
 Terminal=false
 Icon=/home/{{username}}/eclipse/icon.xpm
 Comment=Integrated Development Environment

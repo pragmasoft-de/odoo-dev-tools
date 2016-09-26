@@ -96,6 +96,11 @@ rm -rf wkhtmltopdf
 # get the users home directory
 USER_HOME=`cat /etc/passwd | grep $USERNAME | awk -F ":" '{print $6}'`
 
+# create eclipse.desktop from template and set some parameters
+if [ -f eclipse.desktop ]
+	then rm eclipse.desktop
+fi
+
 cp eclipse.desktop.template eclipse.desktop
 sed -i s/{{username}}/$USERNAME/ eclipse.desktop
 
@@ -126,6 +131,7 @@ chown $USERNAME.$USERNAME $USER_HOME/eclipse -R
 cd $USER_HOME/.local/share/applications
 cp $START_DIR/eclipse.desktop .
 chown $USERNAME.$USERNAME eclipse.desktop
+chmod +x eclipse.desktop
 
 rm -rf /tmp/eclipse
 rm -rf /tmp/pydev
