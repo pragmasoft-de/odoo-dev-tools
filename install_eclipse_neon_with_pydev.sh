@@ -4,6 +4,7 @@
 # (c) Josef Kaser 2016
 # http://www.pragmasoft.de
 #
+# installs Eclipse and all components that are required for odoo development
 
 # needed later in the script to go back to the script directory
 START_DIR=$PWD
@@ -56,8 +57,41 @@ if [ `cat /etc/passwd | grep -i $USERNAME | wc -l` -eq 0 ] ; then
 	exit
 fi
 
+# install required Ubuntu packages for Python development
+apt-get install gcc unzip python2.7 python-dev python-pychart python-gnupg python-pil python-zsi python-ldap python-lxml python-dateutil libxslt1.1 libxslt1-dev libldap2-dev libsasl2-dev python-pip poppler-utils xfonts-base xfonts-75dpi xfonts-utils libxfont1 xfonts-encodings xzip xz-utils python-openpyxl python-xlrd python-decorator python-requests python-pypdf python-gevent npm nodejs node-less node-clean-css git mcrypt keychain software-properties-common python-passlib libjpeg-dev libfreetype6-dev zlib1g-dev libpng12-dev -y
+
+# install PostgreSQL
+apt-get install postgresql-9.5 postgresql-client postgresql-client-common postgresql-contrib-9.5 postgresql-server-dev-9.5 -y
+
+# install required python modules for odoo development
+easy_install --upgrade pip
+pip install BeautifulSoup BeautifulSoup4 passlib pillow dateutils polib unidecode flanker simplejson enum py4j
+
+# install Node.js
+npm install -g npm
+npm install -g less-plugin-clean-css
+npm install -g less@1.4.2
+
+ln -s /usr/bin/nodejs /usr/bin/node
+rm /usr/bin/lessc
+ln -s /usr/local/bin/lessc /usr/bin/lessc
+
 # install Oracle Java 8
 ./install_oracle_java8.sh
+
+# install wkhtmltopdf
+cd /tmp
+mkdir wkhtmltopdf
+cd wkhtmltopdf
+wget http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+unxz wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+tar xvf wkhtmltox-0.12.3_linux-generic-amd64.tar
+cd wkhtmltox/bin
+cp * /usr/local/bin/
+cd /usr/bin
+ln -s /usr/local/bin/wkhtmltopdf ./wkhtmltopdf
+cd /tmp
+rm -rf wkhtmltopdf
 
 # get the users home directory
 USER_HOME=`cat /etc/passwd | grep $USERNAME | awk -F ":" '{print $6}'`
@@ -86,8 +120,7 @@ cp -r /tmp/eclipse/* .
 cd dropins
 mkdir pydev
 cd pydev
-cp -r /tmp/pydev/features/* .
-cp -r /tmp/pydev/plugins/* .
+cp -r /tmp/pydev/* .
 chown $USERNAME.$USERNAME $USER_HOME/eclipse -R
 
 cd $USER_HOME/.local/share/applications
