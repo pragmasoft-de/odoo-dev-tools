@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Eclipse Neon
+Type=Application
+Exec=/home/{{username}}/eclipse
+Terminal=false
+Icon=/home/{{username}}/eclipse/icon.xpm
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[de_DE]=eclipse.desktop.template
