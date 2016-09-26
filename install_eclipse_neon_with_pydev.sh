@@ -129,6 +129,10 @@ cd pydev
 cp -r /tmp/pydev/* .
 chown $USERNAME.$USERNAME $USER_HOME/eclipse -R
 
+# build debugger speedups for PyDev
+/usr/bin/python2.7 $USER_HOME/eclipse/dropins/pydev/plugins/org.python.pydev_5.2.0.201608171824/pysrc/setup_cython.py build_ext --inplace
+
+# create desktop shortcut file from template
 cd $USER_HOME/.local/share/applications
 cp $START_DIR/eclipse.desktop .
 chown $USERNAME.$USERNAME eclipse.desktop
