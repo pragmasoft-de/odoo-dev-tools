@@ -68,15 +68,15 @@ sed -i s/{{username}}/$USERNAME/ eclipse.desktop
 # download and untar Eclipse Neon
 cd /tmp
 mkdir eclipse
-wget $ECLIPSE_DL_LINK
-tar xvfz $ECLIPSE_FILE_NAME
+wget "$ECLIPSE_DL_LINK"
+tar xvfz "$ECLIPSE_FILE_NAME"
 
 # download and unzip the PyDev plugin
 cd /tmp
 mkdir pydev
 cd pydev
-wget $PYDEV_DL_URL
-unzip $PYDEV_FILE_NAME
+wget "$PYDEV_DL_URL"
+unzip "$PYDEV_FILE_NAME"
 
 # copy Eclipse and PyDev to its destination
 cd $USER_HOME
