@@ -107,6 +107,7 @@ sed -i s/{{username}}/$USERNAME/ eclipse.desktop
 # download and untar Eclipse Neon
 cd /tmp
 mkdir eclipse
+cd eclipse
 wget "$ECLIPSE_DL_LINK"
 tar xvfz "$ECLIPSE_FILE_NAME"
 
@@ -121,7 +122,7 @@ unzip "$PYDEV_FILE_NAME"
 cd $USER_HOME
 mkdir eclipse
 cd eclipse
-cp -r /tmp/eclipse/* .
+cp -r /tmp/eclipse/eclipse/* .
 cd dropins
 mkdir pydev
 cd pydev
