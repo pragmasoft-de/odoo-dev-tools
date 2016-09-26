@@ -79,6 +79,17 @@ ln -s /usr/local/bin/lessc /usr/bin/lessc
 # install Oracle Java 8
 ./install_oracle_java8.sh
 
+# get the users home directory
+USER_HOME=`cat /etc/passwd | grep $USERNAME | awk -F ":" '{print $6}'`
+
+# create eclipse.desktop from template and set some parameters
+if [ -f eclipse.desktop ]
+	then rm eclipse.desktop
+fi
+
+cp eclipse.desktop.template eclipse.desktop
+sed -i s/{{username}}/$USERNAME/ eclipse.desktop
+
 # install wkhtmltopdf
 cd /tmp
 mkdir wkhtmltopdf
@@ -92,17 +103,6 @@ cd /usr/bin
 ln -s /usr/local/bin/wkhtmltopdf ./wkhtmltopdf
 cd /tmp
 rm -rf wkhtmltopdf
-
-# get the users home directory
-USER_HOME=`cat /etc/passwd | grep $USERNAME | awk -F ":" '{print $6}'`
-
-# create eclipse.desktop from template and set some parameters
-if [ -f eclipse.desktop ]
-	then rm eclipse.desktop
-fi
-
-cp eclipse.desktop.template eclipse.desktop
-sed -i s/{{username}}/$USERNAME/ eclipse.desktop
 
 # download and untar Eclipse Neon
 cd /tmp
