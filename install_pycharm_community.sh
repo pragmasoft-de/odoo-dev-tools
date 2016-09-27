@@ -114,7 +114,7 @@ tar xvfz "$PYCHARM_FILE_NAME"
 cd $USER_HOME
 mkdir pycharm
 cd pycharm
-cp -r /tmp/pycharm-community-$PYCHARM_VERSION/* .
+cp -r /tmp/pycharm/pycharm-community-$PYCHARM_VERSION/* .
 chown $USERNAME.$USERNAME $USER_HOME/pycharm -R
 
 # build debugger speedups for Pycharm
