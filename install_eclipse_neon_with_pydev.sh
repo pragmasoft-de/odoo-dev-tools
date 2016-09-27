@@ -17,10 +17,16 @@ case $ARCH in
         x86_64)
                 ECLIPSE_DL_LINK="http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/neon/R/eclipse-java-neon-R-linux-gtk-x86_64.tar.gz"
 				ECLIPSE_FILE_NAME="eclipse-java-neon-R-linux-gtk-x86_64.tar.gz"
+				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.3_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.3_linux-generic-amd64.tar"
                 ;;
         i386)
                 ECLIPSE_DL_LINK="http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/neon/R/eclipse-java-neon-R-linux-gtk.tar.gz"
 				ECLIPSE_FILE_NAME="eclipse-java-neon-R-linux-gtk.tar.gz"
+				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-i386.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.3_linux-generic-i386.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.3_linux-generic-i386.tar"
                 ;;
         *)
                 ECLIPSE_DL_LINK="unsupported architecture"
@@ -94,9 +100,9 @@ sed -i s/{{username}}/$USERNAME/ eclipse.desktop
 cd /tmp
 mkdir wkhtmltopdf
 cd wkhtmltopdf
-wget http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
-unxz wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
-tar xvf wkhtmltox-0.12.3_linux-generic-amd64.tar
+wget $WKHTMLTOPDF_DL_LINK
+unxz $WKHTMLTOPDF_FILE_NAME_TAR_XZ
+tar xvf $WKHTMLTOPDF_FILE_NAME_TAR
 cd wkhtmltox/bin
 cp * /usr/local/bin/
 cd /usr/bin

@@ -20,10 +20,16 @@ case $ARCH in
         x86_64)
                 PYCHARM_DL_LINK="https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz"
 				PYCHARM_FILE_NAME="pycharm-community-$PYCHARM_VERSION.tar.gz"
+				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.3_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.3_linux-generic-amd64.tar"
                 ;;
         i386)
                 PYCHARM_DL_LINK="https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz"
 				PYCHARM_FILE_NAME="pycharm-community-$PYCHARM_VERSION.tar.gz"
+				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-i386.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.3_linux-generic-i386.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.3_linux-generic-i386.tar"
                 ;;
         *)
                 PYCHARM_DL_LINK="unsupported architecture"
@@ -93,9 +99,9 @@ sed -i s/{{username}}/$USERNAME/ pycharm.desktop
 cd /tmp
 mkdir wkhtmltopdf
 cd wkhtmltopdf
-wget http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
-unxz wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
-tar xvf wkhtmltox-0.12.3_linux-generic-amd64.tar
+wget $WKHTMLTOPDF_DL_LINK
+unxz $WKHTMLTOPDF_FILE_NAME_TAR_XZ
+tar xvf $WKHTMLTOPDF_FILE_NAME_TAR
 cd wkhtmltox/bin
 cp * /usr/local/bin/
 cd /usr/bin
