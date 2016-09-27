@@ -6,6 +6,12 @@
 #
 # based on https://gist.github.com/mugli/8720670
 
+# script must be run as root
+if [ $USER != "root" ]; then
+	echo "Script must be run as root"
+	exit
+fi
+
 apt-get install python-software-properties -y
 add-apt-repository ppa:webupd8team/java -y
 apt-get update

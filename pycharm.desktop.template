@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Pycharm Community Edition
+Type=Application
+Exec=/home/{{username}}/pycharm/bin/pycharm.sh
+Terminal=false
+Icon=/home/{{username}}/pycharm/pycharm.png
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[de_DE]=pycharm.desktop
