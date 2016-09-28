@@ -146,7 +146,7 @@ chmod +x eclipse.desktop
 
 # add shortcut to Unity launcher
 if [ `env | grep -w "INSTANCE" | awk -F "=" '{print $2}'` = "Unity" ]; then
-	gsettings set com.canonical.Unity.Launcher favorites "['eclipse.desktop']"
+	gsettings set com.canonical.Unity.Launcher favorites "`gsettings get com.canonical.Unity.Launcher favorites | sed s/.$//` ,'eclipse.desktop']"
 fi
 
 rm -rf /tmp/eclipse
