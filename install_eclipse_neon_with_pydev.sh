@@ -144,6 +144,11 @@ cp $START_DIR/eclipse.desktop .
 chown $USERNAME.$USERNAME eclipse.desktop
 chmod +x eclipse.desktop
 
+# add shortcut to Unity launcher
+if [ `env | grep -w "INSTANCE" | awk -F "=" '{print $2}'` = "Unity" ]; then
+	gsettings set com.canonical.Unity.Launcher favorites "['eclipse.desktop']"
+fi
+
 rm -rf /tmp/eclipse
 rm -rf /tmp/pydev
 

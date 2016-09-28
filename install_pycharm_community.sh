@@ -132,5 +132,10 @@ cp $START_DIR/pycharm.desktop .
 chown $USERNAME.$USERNAME pycharm.desktop
 chmod +x pycharm.desktop
 
+# add shortcut to Unity launcher
+if [ `env | grep -w "INSTANCE" | awk -F "=" '{print $2}'` = "Unity" ]; then
+	gsettings set com.canonical.Unity.Launcher favorites "['pycharm.desktop']"
+fi
+
 rm -rf /tmp/pycharm
 
