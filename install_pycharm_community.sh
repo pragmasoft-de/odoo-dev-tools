@@ -66,7 +66,13 @@ fi
 apt-get install gcc unzip python2.7 python-dev python-pychart python-gnupg python-pil python-zsi python-ldap python-lxml python-dateutil libxslt1.1 libxslt1-dev libldap2-dev libsasl2-dev python-pip poppler-utils xfonts-base xfonts-75dpi xfonts-utils libxfont1 xfonts-encodings xzip xz-utils python-openpyxl python-xlrd python-decorator python-requests python-pypdf python-gevent npm nodejs node-less node-clean-css git mcrypt keychain software-properties-common python-passlib libjpeg-dev libfreetype6-dev zlib1g-dev libpng12-dev -y
 
 # install PostgreSQL
-apt-get install postgresql-9.5 postgresql-client postgresql-client-common postgresql-contrib-9.5 postgresql-server-dev-9.5 -y
+apt-get install postgresql-9.5 postgresql-client postgresql-client-common postgresql-contrib-9.5 postgresql-server-dev-9.5 pgadmin3 -y
+
+# create database user "odoo"
+/usr/bin/sudo -u postgres ./create_pg_role.sh
+
+# remove the Ubuntu version of less as it interferes with the Node.js version
+apt-get remove less
 
 # install required python modules for odoo development
 easy_install --upgrade pip
@@ -75,7 +81,7 @@ pip install BeautifulSoup BeautifulSoup4 passlib pillow dateutils polib unidecod
 # install Node.js
 npm install -g npm
 npm install -g less-plugin-clean-css
-npm install -g less@1.4.2
+npm install -g less
 
 ln -s /usr/bin/nodejs /usr/bin/node
 rm /usr/bin/lessc
@@ -133,9 +139,7 @@ chown $USERNAME.$USERNAME pycharm.desktop
 chmod +x pycharm.desktop
 
 # add shortcut to Unity launcher
-if [ `env | grep -w "INSTANCE" | awk -F "=" '{print $2}'` = "Unity" ]; then
-	gsettings set com.canonical.Unity.Launcher favorites "`gsettings get com.canonical.Unity.Launcher favorites | sed s/.$//` ,'pycharm.desktop']"
-fi
+/usr/bin/sudo -u $USERNAME ./create_launcher_shortcut.sh
 
 rm -rf /tmp/pycharm
 
