@@ -71,9 +71,6 @@ apt-get install postgresql-9.5 postgresql-client postgresql-client-common postgr
 # create database user "odoo"
 /usr/bin/sudo -u postgres ./create_pg_role.sh
 
-# remove the Ubuntu version of less as it interferes with the Node.js version
-apt-get remove less
-
 # install required python modules for odoo development
 easy_install --upgrade pip
 pip install BeautifulSoup BeautifulSoup4 passlib pillow dateutils polib unidecode flanker simplejson enum py4j
