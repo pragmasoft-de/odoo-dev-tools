@@ -76,7 +76,7 @@ pip install BeautifulSoup BeautifulSoup4 passlib pillow dateutils polib unidecod
 # install Node.js
 npm install -g npm
 npm install -g less-plugin-clean-css
-npm install -g less@1.4.2
+npm install -g less
 
 ln -s /usr/bin/nodejs /usr/bin/node
 rm /usr/bin/lessc
@@ -145,9 +145,7 @@ chown $USERNAME.$USERNAME eclipse.desktop
 chmod +x eclipse.desktop
 
 # add shortcut to Unity launcher
-if [ `env | grep -w "INSTANCE" | awk -F "=" '{print $2}'` = "Unity" ]; then
-	gsettings set com.canonical.Unity.Launcher favorites "`gsettings get com.canonical.Unity.Launcher favorites | sed s/.$//` ,'eclipse.desktop']"
-fi
+/usr/bin/sudo -u $USERNAME ./create_eclipse_launcher_shortcut.sh
 
 rm -rf /tmp/eclipse
 rm -rf /tmp/pydev
