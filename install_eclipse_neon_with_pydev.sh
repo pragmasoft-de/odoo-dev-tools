@@ -145,7 +145,7 @@ chown $USERNAME.$USERNAME eclipse.desktop
 chmod +x eclipse.desktop
 
 # add shortcut to Unity launcher
-/usr/bin/sudo -u $USERNAME ./create_eclipse_launcher_shortcut.sh
+/usr/bin/sudo -u $USERNAME $START_DIR/create_eclipse_launcher_shortcut.sh
 
 rm -rf /tmp/eclipse
 rm -rf /tmp/pydev
