@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to install Pycharm Community Edition on Ubuntu 16.04 LTS.
-# (c) Josef Kaser 2016
+# (c) Josef Kaser 2016 - 2017
 # http://www.pragmasoft.de
 #
 # installs Pycharm and all components that are required for odoo development
@@ -20,16 +20,16 @@ case $ARCH in
         x86_64)
                 PYCHARM_DL_LINK="https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz"
 				PYCHARM_FILE_NAME="pycharm-community-$PYCHARM_VERSION.tar.gz"
-				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz"
-				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.3_linux-generic-amd64.tar.xz"
-				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.3_linux-generic-amd64.tar"
+				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.4_linux-generic-amd64.tar"
                 ;;
         i386)
                 PYCHARM_DL_LINK="https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz"
 				PYCHARM_FILE_NAME="pycharm-community-$PYCHARM_VERSION.tar.gz"
-				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-i386.tar.xz"
-				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.3_linux-generic-i386.tar.xz"
-				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.3_linux-generic-i386.tar"
+				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-i386.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.4_linux-generic-i386.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.4_linux-generic-i386.tar"
                 ;;
         *)
                 PYCHARM_DL_LINK="unsupported architecture"

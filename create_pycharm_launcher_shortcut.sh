@@ -8,5 +8,5 @@
 
 cd ~/.local/share/applications
 
-gsettings set com.canonical.Unity.Launcher favorites "`gsettings get com.canonical.Unity.Launcher favorites | sed s/.$//` ,'pycharm.desktop']"
+gsettings set com.canonical.Unity.Launcher favorites "`gsettings get com.canonical.Unity.Launcher favorites | sed s/.$//` ,'$1/pycharm.desktop']"
 
