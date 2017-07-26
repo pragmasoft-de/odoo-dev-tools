@@ -13,7 +13,7 @@ START_DIR=$PWD
 ARCH=`arch`
 
 # version of Pycharm
-PYCHARM_VERSION='2017.1.5'
+PYCHARM_VERSION='2017.2'
 
 # get the download link for Pycharm Community Edition that corresponds to the architecture
 case $ARCH in
