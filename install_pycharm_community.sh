@@ -20,14 +20,21 @@ case $ARCH in
         x86_64)
                 PYCHARM_DL_LINK="https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz"
 				PYCHARM_FILE_NAME="pycharm-community-$PYCHARM_VERSION.tar.gz"
-				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_DL_LINK="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
+				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.4_linux-generic-amd64.tar"
+                ;;
+        i686)
+                PYCHARM_DL_LINK="https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz"
+				PYCHARM_FILE_NAME="pycharm-community-$PYCHARM_VERSION.tar.gz"
+				WKHTMLTOPDF_DL_LINK="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
 				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
 				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.4_linux-generic-amd64.tar"
                 ;;
         i386)
                 PYCHARM_DL_LINK="https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz"
 				PYCHARM_FILE_NAME="pycharm-community-$PYCHARM_VERSION.tar.gz"
-				WKHTMLTOPDF_DL_LINK="http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-i386.tar.xz"
+				WKHTMLTOPDF_DL_LINK="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-i386.tar.xz"
 				WKHTMLTOPDF_FILE_NAME_TAR_XZ="wkhtmltox-0.12.4_linux-generic-i386.tar.xz"
 				WKHTMLTOPDF_FILE_NAME_TAR="wkhtmltox-0.12.4_linux-generic-i386.tar"
                 ;;
