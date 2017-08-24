@@ -71,7 +71,7 @@ apt-get install postgresql-9.5 postgresql-client postgresql-client-common postgr
 
 # install required python modules for odoo development
 easy_install --upgrade pip
-pip install BeautifulSoup BeautifulSoup4 passlib pillow dateutils polib unidecode flanker simplejson enum py4j
+pip install BeautifulSoup BeautifulSoup4 passlib pillow dateutils polib unidecode flanker simplejson enum py4j pylint-odoo
 
 # install Node.js
 npm install -g npm
