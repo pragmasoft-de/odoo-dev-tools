@@ -13,7 +13,7 @@ START_DIR=$PWD
 ARCH=`arch`
 
 # version of Pycharm
-PYCHARM_VERSION='2017.2.3'
+PYCHARM_VERSION='2017.2.4'
 
 # get the download link for Pycharm Community Edition that corresponds to the architecture
 case $ARCH in
@@ -73,7 +73,7 @@ fi
 apt-get install gcc unzip python2.7 python-dev python-pychart python-gnupg python-pil python-zsi python-ldap python-lxml python-dateutil python-setuptools libxslt1.1 libxslt1-dev libldap2-dev libsasl2-dev python-pip poppler-utils xfonts-base xfonts-75dpi xfonts-utils libxfont1 xfonts-encodings xzip xz-utils python-openpyxl python-xlrd python-decorator python-requests python-pypdf python-gevent npm nodejs node-less node-clean-css git mcrypt keychain software-properties-common python-passlib libjpeg-dev libfreetype6-dev zlib1g-dev libpng12-dev chromium-browser unity-chromium-extension poedit -y
 
 # install PostgreSQL
-apt-get install postgresql-9.5 postgresql-client postgresql-client-common postgresql-contrib-9.5 postgresql-server-dev-9.5 pgadmin3 -y
+apt-get install postgresql postgresql-client postgresql-client-common postgresql-contrib postgresql-server-dev pgadmin3 -y
 
 # create database user "odoo"
 /usr/bin/sudo -u postgres ./create_pg_role.sh
