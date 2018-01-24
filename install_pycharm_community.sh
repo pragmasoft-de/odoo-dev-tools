@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to install Pycharm Community Edition on Ubuntu 16.04 LTS.
-# (c) Josef Kaser 2016 - 2017
+# (c) Josef Kaser 2016 - 2018
 # http://www.pragmasoft.de
 #
 # installs Pycharm and all components that are required for odoo development
@@ -76,7 +76,7 @@ apt-get install gcc unzip python2.7 python-dev python-pychart python-gnupg pytho
 apt-get install postgresql postgresql-client postgresql-client-common postgresql-contrib postgresql-server-dev pgadmin3 -y
 
 # create database user "odoo"
-/usr/bin/sudo -u postgres ./create_pg_role.sh
+su postgres /usr/bin/psql -c "create role odoo with CREATEROLE CREATEDB LOGIN password '$PG_ROLE_ODOO_PWD';"
 
 # install required python modules for odoo development
 easy_install --upgrade pip
