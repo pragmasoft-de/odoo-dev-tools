@@ -1,5 +1,5 @@
 # Description
-* scripts to install Eclipse Neon with PyDev or PyCharm 2016.2.3 on Ubuntu 16.04 LTS with Unity Desktop
+* scripts to install Eclipse Neon with PyDev or PyCharm on Ubuntu 16.04 LTS with Unity Desktop
 * installs all requirements for odoo development, including PostgreSQL
 * install git client: apt-get install git
 * get repository: git clone https://github.com/pragmasoft-de/odoo-dev-tools
